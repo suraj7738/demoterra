@@ -1,7 +1,7 @@
 pipeline {
     agent any; 
     environment {
-       MY_CRED = credentials('azurelogin')
+       MY_CRED = credentials('feb7d482-40a7-421d-ab69-38d3615d510f')
     } 
     stages {
         stage('Git checkout'){
@@ -9,7 +9,7 @@ pipeline {
               git branch: 'main', url: 'https://github.com/meetbinitha/demoterra.git'
             }
         }
-        stage('azurelogin') {
+        stage('feb7d482-40a7-421d-ab69-38d3615d510f') {
             steps {
                 sh 'az login --service-principal -u $MY_CRED_CLIENT_ID -p=$MY_CRED_CLIENT_SECRET -t $MY_CRED_TENANT_ID'
             }
